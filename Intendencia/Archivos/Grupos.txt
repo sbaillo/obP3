@@ -1,0 +1,9 @@
+4#Abogado
+1#Administrador
+8#Administrativo
+6#Contador
+5#Escribano
+7#Inspector
+2#Mantenimiento
+3#Oficial
+9#Representante

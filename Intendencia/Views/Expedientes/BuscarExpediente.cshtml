@@ -1,0 +1,94 @@
+﻿@model  IEnumerable<Modelos.EtapasDeExpediente>
+    @{
+        ViewBag.Title = "BuscarExpediente";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Consolidar Etapas</h2>
+
+
+    <div class="row">
+        <div class="col-md-8">
+
+            @using (Html.BeginForm("BuscarExpediente", "Expedientes", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <br />
+                <p>Ingrese un numero de expediente</p>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="numero" class="col-md-4 control-label">Numero de expediente</label>
+                    @*@Html.Label("Número de expediente", new { @class = "col-md-2 control-label" })*@
+                    <div class="col-md-8">
+                        <input type="text" name="idExpediente" class="form-control" required />
+                        @*@Html.TextBox("idExpediente", new { @class = "form-control", @required = true })*@
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <input type="submit" id="btnExpediente" value="Buscar expediente" class="btn btn-success" />
+                    </div>
+                </div>
+
+                <br />
+                <p id="msjSolicitante" class="text-danger col-md-offset-4 col-md-10">@ViewBag.Error</p>
+
+            }
+        </div>
+    </div>
+
+@if(Model != null) { 
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Etapa)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaInicio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FechaFin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Finalizada)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Foto)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Etapa.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaInicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FechaFin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Finalizada)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Foto)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Cumplimiento", "Edit", "EtapasDeExpedientes", new { id = item.Id }, new { })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+}

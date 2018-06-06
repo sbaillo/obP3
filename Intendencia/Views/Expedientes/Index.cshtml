@@ -1,0 +1,60 @@
+﻿@model Intendencia.Models.AltaExpedienteViewModel
+
+    @{
+        ViewBag.Title = "Nuevo expediente";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/JS/AltaTramite.js"></script>
+
+    <div class="row">
+        <div class="col-md-8">
+
+            @using (Html.BeginForm("Index", "Expedientes", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <br />
+                <p>Ingrese cédula del solicitante para iniciar un expediente</p>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(m => m.CedulaSolicitante, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.CedulaSolicitante, new { @class = "form-control", @required = true })
+                        @Html.ValidationMessageFor(m => m.CedulaSolicitante, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="button" value="Ingresar Solicitante" id="btnSolicitante" class="btn btn-default" disabled onclick="location.href='@Url.Action("Index", "Solicitantes")'" />
+                    </div>
+                </div>
+                <br />
+                <p id="msjSolicitante" class="text-danger col-md-offset-2 col-md-10">@ViewBag.Error</p>
+
+                <br />
+                <hr />
+                <br />
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.idTramiteSeleccionado, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.idTramiteSeleccionado, Model.TramitesDisponibles, new { @disabled = true, @class = "form-control", @required = true })
+                        @Html.ValidationMessageFor(m => m.idTramiteSeleccionado, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" id="btnExpediente" value="Alta Expediente" class="btn btn-success" disabled />
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+
+
+

@@ -1,0 +1,35 @@
+﻿@model Modelos.Expediente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Expediente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaCerrado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstaCerrado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaActual)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

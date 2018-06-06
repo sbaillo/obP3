@@ -1,0 +1,21 @@
+﻿1@1@Sacar fecha@5
+1@2@Prueba teórica@30
+1@3@Prueba de manejo@30
+1@4@Emisión de libreta de conductor@25
+2@5@Solicitud de inicio@15
+2@6@Presentación de documentación@90
+2@7@Evaluación del proyecto@60
+2@8@Aprobación permisos@30
+2@9@Comunicación oficial@15
+3@10@Solicitud de inicio@15
+3@11@Presentación de documentación@30
+3@12@Inspección del vehículo@30
+3@13@Resolucion@30
+3@14@Asignación de empadronamiento@30
+4@15@Sacar fecha@5
+4@16@Aprobación de documentación@30
+5@17@Inicio de la solicitud@5
+5@18@Certificación del acta@15
+5@19@Despacho del acta@10
+6@20@Etapa 1@23
+6@21@Etapa 2@4
