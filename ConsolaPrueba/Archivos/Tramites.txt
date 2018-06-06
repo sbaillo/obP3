@@ -1,0 +1,6 @@
+﻿1|Libreta de conducir|1200|30
+2|Permiso de construcción|15000|60
+3|Empadronamiento automotor|5000|60
+4|Certificación de la Junta Departamental|500|30
+5|Acta de defunción|400|30
+6|Titulo de tramite 2|213|30

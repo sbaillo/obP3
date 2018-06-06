@@ -1,0 +1,10 @@
+#admin@gmail.com#1#Administrador
+asdasd#admin2@gmail.com#4#Abogado
+Diego Sabella#ds@gmail.com#2#Mantenimiento
+Emiliano Sabella#es@gmail.com#5#Escribano
+Federico Magno#fm@gmail.com#7#Inspector
+Federico Sotto#fs@gmail.com#3#Oficial
+Ignacio Ifran#ii@gmail.com#6#Contador
+Lucia Fernandez#lf@gmail.com#2#Mantenimiento
+Carlos García#mantenimiento@gmail.com#2#Mantenimiento
+Mauricio Garcia#mg@gmail.com#4#Abogado
